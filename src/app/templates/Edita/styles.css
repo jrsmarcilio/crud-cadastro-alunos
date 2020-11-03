@@ -1,0 +1,37 @@
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: "Crimson Text", serif;
+  font-size: 3vh;
+}
+
+#bodyp1 {
+  padding: 5vh 3vh 0vh 2vh;
+  margin: 0vh 0vh 0vh 0vh;
+  width: 70vh;
+  height: 50vh;
+
+  background-color: #efe;
+  border-collapse: collapse;
+  border: solid 0.6vh;
+  border-radius: 20vh;
+}
+
+.cabecalho {
+  margin-top: 0;
+  margin-bottom: 5vh;
+}
+
+button {
+  border-radius: 20vh;
+}
+
+#salvar {
+  background-color: green;
+}
+
+#cancelar {
+  background-color: orangered;
+}
