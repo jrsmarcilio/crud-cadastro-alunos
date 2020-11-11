@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listagem de Alunos</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Listagem de alunos</h1>
+      <a class="btn-floating btn-large waves-effect waves-light red" href="/api/form"><i class="material-icons">add</i></a>
+      <hr />
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Curso</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <for|aluno, index| of=data.results>
+          <tbody>
+            <tr>
+              <td>${aluno.id}</td>
+              <td>${aluno.nome}</td>
+              <td>${aluno.email}</td>
+              <td>${aluno.curso}</td>
+              <td>
+                <a
+                style="margin-right: 10pt"
+                class="btn-floating btn-tiny waves-effect waves-light green-light"
+                href="/api/edit/${aluno.id}"
+                >
+                  <i class="material-icons"> edit </i>
+                </a>
+                <a
+                class="btn-floating btn-tiny waves-effect waves-light green-light"
+                href="/api/del/${aluno.id}"
+                >
+                  <i class="material-icons"> delete </i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </for>
+      </table>
+    </div>
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <for|message, index| of=data.error_messages>
+      <script>
+        M.toast({
+          html: "${message}",
+          classes: "red lighten-1"
+        })
+        </script>
+    </for>
+    
+    <for|message, index| of=data.success_messages>
+      <script>
+        M.toast({
+          html: "${message}",
+          classes: "green lighten-1"
+        })
+      </script>
+    </for>
+
+  </body>
+</html>

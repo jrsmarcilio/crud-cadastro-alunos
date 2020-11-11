@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alunos</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Cadastro de Alunos</h1>
+        <hr />
+      </div>
+      <form class="col s12" action="/api/alunos" method="post">
+        <div class="row">
+          <input type="hidden" name="id" value="${data.id}" />
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input
+              id="first_name"
+              class="nome validate"
+              type="text"
+              name="nome"
+              value="${data.nome}"
+            />
+            <label for="first_name">Primeiro nome</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="validate"
+              value="${data.email}"
+            />
+            <label for="email">Email</label>
+            <span
+              class="helper-text"
+              data-error="E-mail invalido"
+              data-success="E-mail valido"
+            >
+              Verificação
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <label>Curso:</label>
+          <p>
+            <label>
+              <input
+                name="curso"
+                type="radio"
+                value="ads"
+                checked="${data.curso == 'ads'}"
+              />
+              <span>Tecnólogo em ADS</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input
+                name="curso"
+                type="radio"
+                value="api"
+                checked="${data.curso == 'api'}"
+              />
+              <span>Tec. em Informática para Internet</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input
+                name="curso"
+                type="radio"
+                value="qualidade"
+                checked="${data.curso == 'qualidade'}"
+              />
+              <span>Tec. em Gestão de Qualidade</span>
+            </label>
+          </p>
+        </div>
+        <div class="row">
+          <button
+            style="margin-right: 10pt"
+            class="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+          >
+            Salvar
+            <i class="material-icons right">send</i>
+          </button>
+          <a href="/api/alunos" class="btn waves-effect waves-light">
+            Cancelar
+          </a>
+        </div>
+      </form>
+    </div>
+    
+    <for|message, index| of=data.error_messages>
+      <script>
+        M.toast({html: "${message}"})
+        </script>
+    </for>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

@@ -2,16 +2,18 @@
   "name": "proj-base-cadastro-alunos",
   "version": "1.0.0",
   "description": "Projeto Base de Cadastro de Alunos - Profº Josino",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --ignore '*.marko' '*.marko.js' src/index.js"
+    "start": "nodemon --ignore '*.marko' '*.marko.js' src/app.js"
   },
   "author": "Marcílio Júnior",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "marko": "^4.23.9",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6"
